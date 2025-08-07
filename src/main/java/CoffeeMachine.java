@@ -6,6 +6,8 @@ public class CoffeeMachine {
 
         // Create a Scanner object to read input
         Scanner keyboard = new Scanner(System.in);
+        // Create a Coffeemaker object
+        CoffeeMaker maker = new CoffeeMaker();
 
         while (true) {
             System.out.println("\nWelcome to the Coffee Machine!");
@@ -36,8 +38,9 @@ public class CoffeeMachine {
 
                     // TODO 8: Create an object of Espresso class using the parameterized constructor
                     // TODO 8: Pass the espressoName, espressoRoast, espressoPrice, and numberOfShots as arguments in the correct order
+                    // Create Espresso object and prepare coffee
                     Espresso espresso = new Espresso(espressoName, espressoRoast, espressoPrice, numberOfShots);
-
+                    maker.prepareCoffee(espresso);
                     // TODO 9: Call the grindBeans() method on the Espresso object
                     espresso.grindBeans();
                     // TODO 10: Call the brewCoffee() method on the Espresso object
@@ -45,7 +48,7 @@ public class CoffeeMachine {
                     // TODO 11: Call the printInfo() method on the Espresso object
                     espresso.printInfo();
                     // TODO 12: Call the printEspressoDetails method on the Espresso object
-                    espresso.printEspressoDetails();
+                    espresso.printInfo();
                     break;
                 case 2:
 
@@ -76,7 +79,9 @@ public class CoffeeMachine {
 
                     // TODO 20: Create an object of Latte class using the parameterized constructor
                     // TODO 20: Pass the latteName, latteRoast, lattePrice, milkType, and syrupFlavor as arguments in the correct order
-                    Latte latte = new Latte(latteName, latteRoast, syrupFlavor, milkType, lattePrice);
+                    // Create Latte object and prepare coffee
+                    Latte latte = new Latte(latteName, latteRoast, 2, milkType, syrupFlavor);
+                    maker.prepareCoffee(latte);
                     // TODO 21: Call the grindBeans() method on the Latte object
                     latte.grindBeans();
                     // TODO 22: Call the brewCoffee() method on the Latte object
@@ -84,7 +89,7 @@ public class CoffeeMachine {
                     // TODO 23: Call the printInfo() method on the Latte object
                     latte.printInfo();
                     // TODO 24: Call the printLatteDetails() method on the Latte object
-                    latte.printLatteDetails();
+                    latte.printInfo();
                     break;
                 case 3:
                     System.out.println("Thank you for using the Coffee Machine!");
